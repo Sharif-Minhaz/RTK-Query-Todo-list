@@ -3,7 +3,7 @@ const SearchTodo = () => {
 
 	}
 	return (
-		<div>
+		<div className="search-bar">
 			<input type="search" onChange={handleSearch} placeholder="Search todos..." />
 		</div>
 	);

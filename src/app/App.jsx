@@ -1,12 +1,12 @@
 import TodosView from "../pages/TodosView";
 import "./App.css";
 
-function App() {
+const App = () => {
 	return (
-		<div>
+		<div className="container">
 			<TodosView />
 		</div>
 	);
-}
+};
 
 export default App;

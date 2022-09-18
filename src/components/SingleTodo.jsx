@@ -8,10 +8,13 @@ const SingleTodo = ({ title, isComplete }) => {
 	};
 
 	return (
-		<div>
-			<span>
-				<input type="checkbox" checked={check} onChange={handleOnChange} /> {title} <button>Edit</button> <button>Del</button>
-			</span>
+		<div className="single-todo">
+			<div>
+				<input type="checkbox" checked={check} onChange={handleOnChange} /> {title}{" "}
+			</div>
+			<div className="action-btn">
+				<button>Edit</button> <button>Delete</button>
+			</div>
 		</div>
 	);
 };
