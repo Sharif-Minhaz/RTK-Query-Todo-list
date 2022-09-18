@@ -16,6 +16,7 @@
 	margin: auto;
 	margin-top: 30px;
 	padding: 20px;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 main .search-bar input {
@@ -25,7 +26,10 @@ main .search-bar input {
 }
 
 .single-todo input[type="checkbox"] {
-    accent-color: white;
+	accent-color: white;
+	scale: 1.1;
+	margin-right: 6px;
+	cursor: pointer;
 }
 .single-todo {
 	display: flex;
@@ -34,11 +38,11 @@ main .search-bar input {
 	border-bottom: 1px solid rgb(224, 224, 224);
 	padding-top: 10px;
 	padding-bottom: 10px;
-    color: rgb(36, 36, 36); 
+	color: rgb(36, 36, 36);
 }
 main .single-todo:nth-child(2) {
 	border-top: 1px solid rgb(224, 224, 224);
-    margin-top: 10px;
+	margin-top: 10px;
 }
 
 .action-btn button {
@@ -57,15 +61,25 @@ form input {
 }
 form button {
 	padding: 0 10px 0 10px;
+	cursor: pointer;
 }
 
 .loading-section {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	background-color: #fff;
+	top: 0;
+	left: 0;
+	z-index: 999;
 }
 .loading-section img {
-    width: 120px;
+	width: 120px;
+}
+.strike {
+	text-decoration: line-through;
+	color: rgb(70, 70, 70);
 }

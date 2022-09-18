@@ -14,7 +14,7 @@ const TodosView = () => {
 		<main>
 			<SearchTodo />
 			{allTodos.data.map((todo) => (
-				<SingleTodo title={todo.title} isComplete={todo.title} key={todo._id} />
+				<SingleTodo id={todo._id} title={todo.title} isComplete={todo.isComplete} key={todo._id} />
 			))}
 			<AddTodo />
 		</main>
