@@ -25,6 +25,7 @@ const AddTodo = () => {
 				value={title}
 				onChange={(e) => setTitle(e.target.value)}
 				placeholder="Enter todo"
+				required
 			/>
 			<button>ADD</button>
 		</form>

@@ -8,7 +8,7 @@ const TodosView = () => {
 	const allTodos = useGetAllTodoQuery();
 
 	if (allTodos.isLoading) return <Loading />;
-	if (allTodos.isError) return <h1>An error occurred {allTodos.error.error}</h1>;
+	if (allTodos.isError) return <h1 className="error-msg">An error occurred, {allTodos.error.error}</h1>;
 
 	return (
 		<main>
