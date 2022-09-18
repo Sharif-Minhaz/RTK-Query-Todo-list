@@ -36,7 +36,7 @@ export const todoApi = createApi({
 			query: (updateTodoData) => {
 				const { id, ...data } = updateTodoData;
 				return {
-					url: `posts/${id}`,
+					url: `todos/${id}`,
 					method: "PATCH",
 					body: data,
 					headers: {

@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { useDeleteTodoMutation } from "../services/todos/todosSlice";
+import { useDeleteTodoMutation, useUpdateTodoMutation } from "../services/todos/todosSlice";
+
 import Loading from "./Loading";
 import UpdateTodo from "./UpdateTodo";
 
@@ -7,8 +8,10 @@ const SingleTodo = ({ id, title, isComplete }) => {
 	const [check, setCheck] = useState(isComplete);
 	const [revealUpdateBox, setRevealUpdateBox] = useState(false);
 	const [deleteTodo, responseInfo] = useDeleteTodoMutation();
+	const [updateTodo] = useUpdateTodoMutation();
 
 	const handleOnChange = () => {
+		updateTodo({ id, isComplete: !check });
 		setCheck(!check);
 	};
 
