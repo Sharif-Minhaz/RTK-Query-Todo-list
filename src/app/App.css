@@ -131,6 +131,9 @@ form.update-box {
 	padding-bottom: 10px;
 }
 
+button {
+	user-select: none;
+}
 input,
 button {
 	border: 1px solid black;

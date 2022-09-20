@@ -5,7 +5,7 @@ export const todoApi = createApi({
 	baseQuery: fetchBaseQuery({
 		baseUrl: "https://todos-api-custom.herokuapp.com/api/",
 	}),
-	tagTypes: ["Todos"],
+	tagTypes: ["Todos", "Search"],
 	endpoints: (builder) => ({
 		getAllTodo: builder.query({
 			query: () => ({
@@ -19,7 +19,7 @@ export const todoApi = createApi({
 				url: `todos/${id}`,
 				method: "DELETE",
 			}),
-			invalidatesTags: ["Todos"],
+			invalidatesTags: ["Todos", "Search"],
 		}),
 		createTodo: builder.mutation({
 			query: (newTodo) => ({
@@ -30,7 +30,7 @@ export const todoApi = createApi({
 					"Content-type": "application/json; charset=UTF-8",
 				},
 			}),
-			invalidatesTags: ["Todos"],
+			invalidatesTags: ["Todos", "Search"],
 		}),
 		updateTodo: builder.mutation({
 			query: (updateTodoData) => {
@@ -44,7 +44,16 @@ export const todoApi = createApi({
 					},
 				};
 			},
-			invalidatesTags: ["Todos"],
+			invalidatesTags: ["Todos", "Search"],
+		}),
+		searchTodo: builder.query({
+			query: (queryString) => {
+				return {
+					url: `todos/find/?title=${queryString}`,
+					method: "GET",
+				};
+			},
+			providesTags: ["Search"],
 		}),
 	}),
 });
@@ -54,4 +63,5 @@ export const {
 	useDeleteTodoMutation,
 	useCreateTodoMutation,
 	useUpdateTodoMutation,
+	useSearchTodoQuery,
 } = todoApi;
